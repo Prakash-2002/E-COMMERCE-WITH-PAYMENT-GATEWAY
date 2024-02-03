@@ -54,8 +54,8 @@ const lineItems = req.body.items.map((item) =>{
     const session = await stripeGateway.checkout.sessions.create({
         payment_method_types: ["card"],
         mode: "payment",
-        success_url: `http://localhost:3000/success.html`,
-        cancel_url: `http://localhost:3000/cancel.html`,
+        success_url: `https://e-commerce-with-payment-gateway.vercel.app/success.html`,
+        cancel_url: `https://e-commerce-with-payment-gateway.vercel.app/cancel.html`,
         billing_address_collection:"required",
         line_items: lineItems,
     });
